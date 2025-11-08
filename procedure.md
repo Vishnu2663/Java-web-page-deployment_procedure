@@ -225,5 +225,78 @@
 
          bash <(curl -sL https://tinyurl.com/mrhvupt9)
 
+ ##### **31. Shortcut link for Jenkins installation (instead of installing step by step use this to install directly)**
+
+         bash <(curl -sL https://tinyurl.com/2r6nkffn)
+
+ ##### **32. Docker Installation Commands**
+
+         sudo apt update
+         sudo apt  install docker.io -y
+         sudo docker --version
+         sudo apt install docker-compose -y
+         docker-compose --version
+
+ ##### **33. Shortcut link for Prometheus installation (instead of installing step by step use this to install directly)**
+
+         bash <(curl -sL https://tinyurl.com/57xn7sf8)
+
+ ##### **34. MySQL Database on Ubuntu 24.04 Instance**
+
+         # Update and Install MySQL
+         sudo apt update && sudo apt upgrade -y
+         sudo apt install mysql-server -y
+         sudo mysql --version
+
+         # Configure MySQL for Password and Remote Login
+         sudo mysql
+
+         # Inside the MySQL shell, run the following:
+         ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
+         CREATE USER IF NOT EXISTS 'root'@'%' IDENTIFIED BY '1234';
+         GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+         FLUSH PRIVILEGES;
+         EXIT;
+
+         # Allow Remote Connections
+         sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+
+         # Change it to: 
+         bind-address = 0.0.0.0
+
+         # Restart MySQL to Apply Changes
+         sudo systemctl restart mysql
+
+   ##### **35. Shortcut link for MySQL installation (instead of installing step by step use this to install directly)**            
+
+         bash <(curl -sL https://tinyurl.com/mr4brnzj)
+
+   ##### **36. Tomcat Installation Steps**
+
+            #  Switch to Root User
+            sudo su -
+
+            # Download Apache Tomcat v9.0.111
+            wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.111/bin/apache-tomcat-9.0.111.tar.gz
+
+            # Extract the Archive
+            tar -zxvf apache-tomcat-9.0.111.tar.gz
+
+            # Remove the Tar File
+            rm -rf apache-tomcat-9.0.111.tar.gz
+
+            # Confirgure Tomcat username admin & password admin
+            vi apache-tomcat-9.0.111/conf/tomcat-users.xml
+
+            # Configure Tomcat Remote Access
+            vi apache-tomcat-9.0.111/webapps/manager/META-INF/context.xml
+
+            # Start the Tomcat server
+            sh apache-tomcat-9.0.111/bin/startup.sh
+
+            # Shutdown the Tomcat server
+            sh apache-tomcat-9.0.111/bin/shutdown.sh
+
+
 
 
